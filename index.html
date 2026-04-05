@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE LUNA - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌙 SPACE LUNA</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="historia.html">HISTÓRIA DO JOGO</a>
+            <a href="curiosidades.html">CURIOSIDADES</a>
+            <a href="servicos.html">SERVIÇOS</a>
+        </nav>
+    </header>
+
+    <main class="home">
+
+<main class="home">
+    <section class="intro">
+        <div class="home-container">
+            <!-- Lado esquerdo - Texto explicativo -->
+            <div class="home-texto">
+                <h2>✨ Sobre o Jogo ✨</h2>
+                <p><strong>SPACE LUNA</strong> é um jogo online de astronomia desenvolvido especialmente para meninas do ensino médio que amam o universo!</p>
+                <p>Embarque em uma jornada espacial com <strong>Luna</strong>, uma jovem estudante que descobre um telescópio mágico e viaja pelo Sistema Solar.</p>
+                <p>🎯 <strong>Objetivo:</strong> Explorar planetas, completar missões científicas e aprender sobre astronomia de forma divertida!</p>
+                <p>🌟 <strong>Destaques:</strong></p>
+                <ul>
+                    <li>🌍 Conteúdo alinhado ao ensino médio</li>
+                    <li>🎮 Jogabilidade interativa e educativa</li>
+                    <li>👩‍🚀 Personagem principal feminina</li>
+                    <li>🏆 Desafios e certificados</li>
+                </ul>
+                <div class="botao-saiba-mais">
+                    <a href="historia.html" class="btn-saiba">Conheça a Luna →</a>
+                </div>
+            </div>
+
+            <!-- Lado direito - Imagem com botão em cima -->
+            <div class="home-imagem">
+                <div class="imagem-container">
+                     <img src="imagens/luna-personagem3.PNG" alt="Sistema Solar - Space Luna" class="imagem-principal">
+                    <a href="#" class="logo-jogar logo-jogar-home">🎮 JOGAR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SPACE LUNA - Explorando o universo com você 💫</p>
+    </footer>
+    <!-- Estrelas cintilantes -->
+<div class="stars" id="stars"></div>
+
+<script>
+    // Criar estrelas cintilantes
+    function createStars() {
+        const starsContainer = document.getElementById('stars');
+        const numStars = 150;
+        
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Tamanho aleatório entre 1px e 3px
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            
+            // Posição aleatória
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            
+            // Duração da animação aleatória (entre 2s e 5s)
+            const duration = Math.random() * 3 + 2;
+            star.style.animationDuration = duration + 's';
+            
+            // Delay aleatório
+            star.style.animationDelay = Math.random() * 5 + 's';
+            
+            starsContainer.appendChild(star);
+        }
+    }
+    
+    createStars();
+</script>
+
+
+</body>
+</html>
