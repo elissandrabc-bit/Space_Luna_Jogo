@@ -622,3 +622,125 @@ footer {
     transform: scale(1.1);
     background: #ff99cc;
 }
+
+/* ======================================== */
+/* MODAL DE VERIFICAÇÃO DE IDADE */
+/* ======================================== */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #0a1a3a, #0a0f2a);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    border: 2px solid #ff66cc;
+    box-shadow: 0 0 40px rgba(255, 102, 204, 0.3);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.modal-content h2 {
+    color: #ff99cc;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.campo-modal {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo-modal label {
+    display: block;
+    color: #ff99cc;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.campo-modal input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.campo-modal input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ff66cc;
+}
+
+.campo-modal input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-verificar {
+    background: linear-gradient(135deg, #ff66cc, #ff3399);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-verificar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.6);
+}
+
+.aviso-modal {
+    font-size: 0.8rem;
+    color: #ff99cc;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* Responsividade do modal */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 25px;
+        width: 95%;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .campo-modal input {
+        padding: 10px 12px;
+    }
+    
+    .btn-verificar {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

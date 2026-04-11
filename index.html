@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Modal de verificação de idade -->
+    <div id="modal-idade" class="modal">
+        <div class="modal-content">
+            <h2>🌙 Bem-vinda ao SPACE LUNA! ✨</h2>
+            <p>Por favor, informe seus dados para acessar o site:</p>
+            
+            <div class="campo-modal">
+                <label>✨ Seu nome:</label>
+                <input type="text" id="nome-usuario" placeholder="Digite seu nome" autocomplete="off">
+            </div>
+            
+            <div class="campo-modal">
+                <label>🎂 Sua idade:</label>
+                <input type="number" id="idade-usuario" placeholder="Digite sua idade" min="0" max="120">
+            </div>
+            
+            <button id="btn-verificar" class="btn-verificar">🚀 Entrar no Site</button>
+            
+            <p class="aviso-modal">* Para acessar o conteúdo, é necessário ter 15 anos ou mais.</p>
+        </div>
+    </div>
+
     <header>
         <h1>🌙 SPACE LUNA</h1>
         <nav>
@@ -17,80 +40,176 @@
         </nav>
     </header>
 
-    <main class="home">
+    <main class="home" id="conteudo-principal">
+        <section class="intro">
+            <div class="home-container">
+                <!-- Lado esquerdo - Texto explicativo -->
+                <div class="home-texto">
+                    <h2>✨ Sobre o Jogo ✨</h2>
+                    <p><strong>SPACE LUNA</strong> é um jogo online de astronomia desenvolvido especialmente para meninas do ensino médio que amam o universo!</p>
+                    <p>Embarque em uma jornada espacial com <strong>Luna</strong>, uma jovem estudante que descobre um telescópio mágico e viaja pelo Sistema Solar.</p>
+                    <p>🎯 <strong>Objetivo:</strong> Explorar planetas, completar missões científicas e aprender sobre astronomia de forma divertida!</p>
+                    <p>🌟 <strong>Destaques:</strong></p>
+                    <ul>
+                        <li>🌍 Conteúdo alinhado ao ensino médio</li>
+                        <li>🎮 Jogabilidade interativa e educativa</li>
+                        <li>👩‍🚀 Personagem principal feminina</li>
+                        <li>🏆 Desafios e certificados</li>
+                    </ul>
+                    <div class="botao-saiba-mais">
+                        <a href="historia.html" class="btn-saiba">Conheça a Luna →</a>
+                    </div>
+                </div>
 
-<main class="home">
-    <section class="intro">
-        <div class="home-container">
-            <!-- Lado esquerdo - Texto explicativo -->
-            <div class="home-texto">
-                <h2>✨ Sobre o Jogo ✨</h2>
-                <p><strong>SPACE LUNA</strong> é um jogo online de astronomia desenvolvido especialmente para meninas do ensino médio que amam o universo!</p>
-                <p>Embarque em uma jornada espacial com <strong>Luna</strong>, uma jovem estudante que descobre um telescópio mágico e viaja pelo Sistema Solar.</p>
-                <p>🎯 <strong>Objetivo:</strong> Explorar planetas, completar missões científicas e aprender sobre astronomia de forma divertida!</p>
-                <p>🌟 <strong>Destaques:</strong></p>
-                <ul>
-                    <li>🌍 Conteúdo alinhado ao ensino médio</li>
-                    <li>🎮 Jogabilidade interativa e educativa</li>
-                    <li>👩‍🚀 Personagem principal feminina</li>
-                    <li>🏆 Desafios e certificados</li>
-                </ul>
-                <div class="botao-saiba-mais">
-                    <a href="historia.html" class="btn-saiba">Conheça a Luna →</a>
+                <!-- Lado direito - Imagem com botão em cima -->
+                <div class="home-imagem">
+                    <div class="imagem-container">
+                        <img src="imagens/astronomia.jpg" alt="Sistema Solar - Space Luna" class="imagem-principal">
+                        <a href="#" class="logo-jogar logo-jogar-home">🎮 JOGAR</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Lado direito - Imagem com botão em cima -->
-            <div class="home-imagem">
-                <div class="imagem-container">
-                     <img src="imagens/luna-personagem3.PNG" alt="Sistema Solar - Space Luna" class="imagem-principal">
-                    <a href="#" class="logo-jogar logo-jogar-home">🎮 JOGAR</a>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 SPACE LUNA - Explorando o universo com você 💫</p>
     </footer>
+
     <!-- Estrelas cintilantes -->
-<div class="stars" id="stars"></div>
+    <div class="stars" id="stars"></div>
 
-<script>
-    // Criar estrelas cintilantes
-    function createStars() {
-        const starsContainer = document.getElementById('stars');
-        const numStars = 150;
-        
-        for (let i = 0; i < numStars; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
+    <script>
+        // Criar estrelas cintilantes
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            if (!starsContainer) return;
             
-            // Tamanho aleatório entre 1px e 3px
-            const size = Math.random() * 3 + 1;
-            star.style.width = size + 'px';
-            star.style.height = size + 'px';
+            const numStars = 150;
+            starsContainer.innerHTML = '';
             
-            // Posição aleatória
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            
-            // Duração da animação aleatória (entre 2s e 5s)
-            const duration = Math.random() * 3 + 2;
-            star.style.animationDuration = duration + 's';
-            
-            // Delay aleatório
-            star.style.animationDelay = Math.random() * 5 + 's';
-            
-            starsContainer.appendChild(star);
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                
+                const duration = Math.random() * 3 + 2;
+                star.style.animationDuration = duration + 's';
+                
+                star.style.animationDelay = Math.random() * 5 + 's';
+                
+                starsContainer.appendChild(star);
+            }
         }
-    }
-    
-    createStars();
-</script>
+        
+        createStars();
 
-
+        // ========================================
+        // VERIFICAÇÃO DE IDADE - CONTEÚDO BORRADO
+        // ========================================
+        
+        // Verificar se o usuário já foi aprovado antes (sessionStorage)
+        const usuarioAprovado = sessionStorage.getItem('spaceLunaAprovado');
+        const nomeUsuario = sessionStorage.getItem('spaceLunaNome');
+        const idadeUsuario = sessionStorage.getItem('spaceLunaIdade');
+        
+        const modal = document.getElementById('modal-idade');
+        const conteudo = document.getElementById('conteudo-principal');
+        const header = document.querySelector('header');
+        const footer = document.querySelector('footer');
+        
+        // Função para borrar o conteúdo
+        function blurContent() {
+            if (conteudo) conteudo.style.filter = 'blur(8px)';
+            if (header) header.style.filter = 'blur(8px)';
+            if (footer) footer.style.filter = 'blur(8px)';
+        }
+        
+        // Função para desborrar o conteúdo
+        function unblurContent() {
+            if (conteudo) conteudo.style.filter = 'none';
+            if (header) header.style.filter = 'none';
+            if (footer) footer.style.filter = 'none';
+        }
+        
+        // Função para bloquear acesso (menor de idade)
+        function bloquearAcesso(nome, idade) {
+            blurContent();
+            alert(`🚫 Olá ${nome}! Infelizmente você tem apenas ${idade} anos.\n\nO SPACE LUNA é recomendado para meninas a partir de 15 anos.\n\nVolte quando tiver a idade certa! 💜`);
+            modal.style.display = 'flex';
+        }
+        
+        // Função para liberar acesso
+        function liberarAcesso(nome, idade) {
+            unblurContent();
+            modal.style.display = 'none';
+            sessionStorage.setItem('spaceLunaAprovado', 'true');
+            sessionStorage.setItem('spaceLunaNome', nome);
+            sessionStorage.setItem('spaceLunaIdade', idade);
+            alert(`✨ Bem-vinda ${nome}! ✨\n\nQue bom que você tem ${idade} anos! Prepare-se para explorar o Sistema Solar com a Luna! 🚀🌙`);
+        }
+        
+        // Verificar se o usuário já foi aprovado
+        if (usuarioAprovado === 'true') {
+            // Já aprovado, conteúdo liberado
+            modal.style.display = 'none';
+            unblurContent();
+        } else {
+            // Primeira vez, mostrar modal e borrar conteúdo
+            modal.style.display = 'flex';
+            blurContent();
+        }
+        
+        // Evento do botão de verificar
+        const btnVerificar = document.getElementById('btn-verificar');
+        
+        btnVerificar.addEventListener('click', function() {
+            const nomeInput = document.getElementById('nome-usuario');
+            const idadeInput = document.getElementById('idade-usuario');
+            
+            const nome = nomeInput.value.trim();
+            const idade = parseInt(idadeInput.value);
+            
+            // Validações
+            if (nome === '') {
+                alert('Por favor, digite seu nome!');
+                nomeInput.focus();
+                return;
+            }
+            
+            if (isNaN(idade) || idade <= 0) {
+                alert('Por favor, digite uma idade válida!');
+                idadeInput.focus();
+                return;
+            }
+            
+            if (idade < 15) {
+                // Menor de idade - acesso bloqueado
+                bloquearAcesso(nome, idade);
+                // Limpar campos
+                nomeInput.value = '';
+                idadeInput.value = '';
+            } else {
+                // Idade permitida - liberar acesso
+                liberarAcesso(nome, idade);
+            }
+        });
+        
+        // Permitir apertar Enter para enviar
+        const inputs = document.querySelectorAll('#nome-usuario, #idade-usuario');
+        inputs.forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    btnVerificar.click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
